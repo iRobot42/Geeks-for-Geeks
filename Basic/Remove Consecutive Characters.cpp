@@ -1,4 +1,4 @@
-#define V3
+#define V2
 
 #ifdef V1 // SC: O(n)
 string removeConsecutiveCharacter( string s ) {
@@ -13,7 +13,7 @@ string removeConsecutiveCharacter( string s ) {
     size_t i{};
     for ( size_t j{ 1 }; j < s.size(); ++j )
         if ( s[ i ] != s[ j ] )
-            s[ ++i ] = s[ j ];
+            s[ ++i ] = move( s[ j ] );
     return s.substr( 0, ++i );
 } // T: 0.02+
 
