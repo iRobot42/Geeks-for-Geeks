@@ -1,6 +1,6 @@
-string triDownwards( string S ){
-    string s{ S };
-    for ( size_t i{}; i < s.size() - 1; ++i, S += s )
-        s[ i ] = '.';
-    return S;
-} // T: 0.01 - 0.02
+string triDownwards( string s ){
+    const size_t S{ s.size() };
+    for ( size_t i{ 1 }; i < S; ++i )
+        s += string( i, '.' ) + s.substr( i, S-i );
+    return s;
+} // 0.01+
