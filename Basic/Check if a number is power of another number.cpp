@@ -13,4 +13,9 @@ int isPowerOfAnother( long long x, long long y ) {
     return d == floor( d ) && x != 1;
 } // 0.01+
 
+#elif defined( V3 )
+int isPowerOfAnother( long long x, long long y ) {
+    return pow( x, floor( log( y ) / log( x ))) == y;
+} // 0.01+
+
 #endif
