@@ -4,6 +4,6 @@ int rev( int n ) {
     return r;
 }
 string checkAdamOrNot( int n ) {
-    const int r{ rev( n ) };
+    const int r{ rev( n )};
     return n * n == rev( r * r ) ? "YES" : "NO";
 } // 0.02+
