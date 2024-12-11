@@ -1,13 +1,14 @@
-#define VERSION 2
+#define V 2
 
-#if VERSION == 1
-bool arraySortedOrNot( int a[], int n ) {
-    return is_sorted( a, a + n );
+#if V == 1
+bool arraySortedOrNot( vector< int >& a ) {
+    return is_sorted( a.cbegin(), a.cend() );
 }
 
-#elif VERSION == 2
-bool arraySortedOrNot( int a[], int n ) {
-    while ( --n ) if ( a[ n ] < a[ n-1 ] ) return false;
+#elif V == 2
+bool arraySortedOrNot( vector< int >& a ) {
+    for ( auto i{ a.size()-1 }; i; --i )
+        if ( a[ i ] < a[ i-1 ] ) return false;
     return true;
 }
 
