@@ -1,7 +1,6 @@
-int maxFruits( int a[], int n, int m ) {
-    int s{ accumulate( a, a + m, 0 )}, r{ s };
-    for ( int i{ m }, j{}; i < n + m; ++i )
-        s -= a[ j++ ] - a[ i % n ],
-        r = max( r, s );
-    return r;
+int maxFruits( vector< int > arr, int m ) {
+    int res{ accumulate( arr.cbegin(), arr.cbegin() + m, 0 ) };
+    for ( int i{}, n{ arr.size() }, sum{ res }; i < n; ++i )
+        res = max( res, sum += arr[ ( i + m ) % n ] - arr[ i ] );
+    return res;
 }
