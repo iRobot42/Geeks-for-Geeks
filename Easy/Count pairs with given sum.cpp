@@ -1,6 +1,7 @@
-int getPairsCount( int a[], int n, int k ) {
+int countPairs( vector< int >& arr, int target ) {
     unordered_map< int, int > m;
-    int c{};
-    while ( n-- ) c += m[ k - a[ n ]], ++m[ a[ n ]];
-    return c;
+    int pcount{};
+    for ( const int i : arr )
+        pcount += m[ target - i ], ++m[ i ];
+    return pcount;
 }
